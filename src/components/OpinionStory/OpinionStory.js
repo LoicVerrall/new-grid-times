@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-const OpinionStory = ({ id, title, author, avatar }) => {
+const OpinionStory = ({ id, title, author, avatar, last }) => {
   return (
     <a href={`/story/${id}`}>
-      <Wrapper>
+      <Wrapper last={last}>
         <Avatar alt="" src={avatar} />
         <div>
           <AuthorName>{author}</AuthorName>
@@ -17,6 +17,8 @@ const OpinionStory = ({ id, title, author, avatar }) => {
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+  border-bottom: ${props => props.last ? 'none' : '2px solid var(--color-gray-300)'};
+  padding: 16px 0;
 `;
 
 const Avatar = styled.img`
