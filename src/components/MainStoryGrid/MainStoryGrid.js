@@ -61,6 +61,7 @@ const Wrapper = styled.div`
       'advertisement advertisement'
       'opinion-stories opinion-stories'
     ;
+    grid-template-columns: 60% 1fr;
   }
 
   @media${QUERIES.laptopAndUp} {
@@ -101,6 +102,10 @@ const OpinionSection = styled.section`
   @media${QUERIES.tabletOnly} {
     & > ${StoryList} {
       flex-direction: row;
+    }
+
+    & > ${StoryList} > a {
+      flex: 1;
     }
 
     & > ${StoryList} > a > * {
