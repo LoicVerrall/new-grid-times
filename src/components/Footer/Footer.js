@@ -150,6 +150,10 @@ const TopRow = styled.div`
     flex-direction: row;
     justify-content: center;
   }
+
+  @media${QUERIES.laptopAndUp} {
+    justify-content: flex-end;
+  }
 `;
 
 const Social = styled.div`
@@ -184,6 +188,12 @@ const MainNavArea = styled.div`
     & > nav {
       text-align: left;
       width: 30%;
+    }
+  }
+
+  @media${QUERIES.laptopAndUp} {
+    & > nav {
+      flex: 1;
     }
   }
 `;
