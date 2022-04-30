@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { QUERIES } from '../../constants';
 
 const SecondaryStory = ({ id, title, image, location, abstract, last }) => {
   return (
@@ -22,7 +23,17 @@ const Wrapper = styled.article`
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
   border-bottom: ${props => props.last ? 'none' : '2px solid var(--color-gray-300)'};
-  padding: 16px 0;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+
+  @media${QUERIES.tabletOnly} {
+    grid-template-areas:
+      'image'
+      'heading'
+      'abstract'
+    ;
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Image = styled.img`
