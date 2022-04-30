@@ -87,6 +87,16 @@ const StoryList = styled.div`
 
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
+
+  @media${QUERIES.tabletOnly} {
+    & > ${StoryList} {
+      flex-direction: row;
+    }
+
+    & > ${StoryList} > a > * {
+      border-bottom: none;
+    }
+  }
 `;
 
 const AdvertisementSection = styled.section`
