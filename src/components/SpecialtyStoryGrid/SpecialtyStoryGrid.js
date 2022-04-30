@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
+import { QUERIES } from '../../constants';
+
 import { MARKET_DATA, SPORTS_STORIES } from '../../data';
 
 import MarketCard from '../MarketCard';
@@ -64,6 +66,15 @@ const SportsStories = styled.div`
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+  @media${QUERIES.tabletAndUp} {
+    display: flex;
+    overflow-x: auto;
+
+    & > * {
+      flex: 1;
+    }
+  }
 `;
 
 export default SpecialtyStoryGrid;
